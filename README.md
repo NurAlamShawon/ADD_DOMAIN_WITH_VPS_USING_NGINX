@@ -60,10 +60,10 @@ Test GitHub Connection
 ssh -T git@github.com
 ```
 ## 3️⃣ Clone Project
-```bash
-Use SSH URL, not HTTPS
 
-```
+## Use SSH URL, not HTTPS
+
+
 ```bash
 git clone git@github.com:username/repo.git
 cd repo
@@ -95,7 +95,7 @@ npm run build
 ```
 ## 8️⃣ Run App with PM2
 ```bash
-Install PM2
+Install pm2
 ```
 ```bash
 sudo npm install -g pm2
@@ -103,13 +103,16 @@ Start App
 ```
 ```bash
 pm2 start npm --name "app" -- run start
-Save & Enable Startup
 ```
+
+## Save & Enable Startup
+
 ```bash
 pm2 save
 pm2 startup systemd
-View Logs
 ```
+## View Logs
+
 ```bash
 pm2 logs app
 ```
@@ -121,8 +124,9 @@ pm2 logs app
 sudo apt install nginx -y
 sudo systemctl enable nginx
 sudo systemctl start nginx
-Remove Default Site
 ```
+## Remove Default Site
+
 ```bash
 sudo rm /etc/nginx/sites-enabled/default
 sudo rm /etc/nginx/sites-available/default
@@ -131,8 +135,10 @@ sudo rm /etc/nginx/sites-available/default
 
 ```bash
 sudo nano /etc/nginx/sites-available/api.example.com
-Paste:
+```
 
+## Paste:
+```bash
 server {
     listen 80;
     server_name api.example.com;
@@ -155,12 +161,11 @@ server {
 ```
 ## Enable & reload:
 ```bash
-
 sudo ln -s /etc/nginx/sites-available/api.example.com /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 ```
-## 1️⃣1️⃣ Install SSL (Certbot)
+## 1️⃣1️⃣ Install SSL (Certbot) for SSL Certificate
 
 ```bash
 sudo apt install certbot python3-certbot-nginx -y
